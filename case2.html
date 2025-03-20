@@ -1,75 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
     <style>
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
         }
 
-        .main-circle{
-            margin-top: 100px;
+        .circle{
             height: 500px;
-            aspect-ratio: 1/1;
+            width: 500px;
             border-radius: 100%;
-            border: 1px solid #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border: 20px solid #333333;
             position: relative;
+            /*animation: animate 3s ease 1;*/
         }
 
-        .main-circle .second-circle{
-            height: 450px;
-            width: 450px;
+        .circle .red-circle{
+            position: absolute;
+            rotate: -45deg;
+            left: 109px;
+            top: -45px;
+            height: 220px;
+            width: 233px;
+            background-color: red;
+            border-radius: 0 100% 0 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .circle-2{
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            height: 420px;
+            width: 420px;
             background-color: gray;
             border-radius: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            z-index: -1;
+
         }
 
-        .main-circle .angle{
+        .circle-2 p{
             position: absolute;
-            left: 125px;
-            rotate: 45deg;
-            top: -50px;
-            height: 250px;
-            aspect-ratio: 1/1;
-            border-radius: 120% 0 0 0;
-            background-color: red;
+            left: 180px;
+            top: 200px;
+            color: #fcfcfc;
+            font-size: 28px;
+        }
+
+        .circle:hover {
+            animation: animate 3s ease 1;
             z-index: -1;
         }
 
-        .main-circle .second-circle p{
-            color: #fcfcfc;
-            font-size: 36px;
-            rotate: 0deg;
-        }
-
-        @keyframes spin {
+        @keyframes animate {
             from{
                 transform: rotate(0deg);
-            }
-            to{
-                transform: rotate(360deg);
-            }
+            }to{
+            transform: rotate(360deg);
+                         }
         }
 
     </style>
 
 </head>
 <body>
-    <div class="main-circle">
-        <div class="angle"></div>
-        <div class="second-circle">
-            <p>RWAD</p>
-        </div>
+    <div class="circle">
+        <div class="red-circle"></div>
+    </div>
+    <div class="circle-2">
+        <p>RWAD</p>
     </div>
 </body>
 </html>
