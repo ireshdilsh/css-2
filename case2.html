@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-circle{
+            margin-top: 100px;
+            height: 500px;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .main-circle .second-circle{
+            height: 450px;
+            width: 450px;
+            background-color: gray;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-circle .angle{
+            position: absolute;
+            left: 125px;
+            rotate: 45deg;
+            top: -50px;
+            height: 250px;
+            aspect-ratio: 1/1;
+            border-radius: 120% 0 0 0;
+            background-color: red;
+            z-index: -1;
+        }
+
+        .main-circle .second-circle p{
+            color: #fcfcfc;
+            font-size: 36px;
+            rotate: 0deg;
+        }
+
+        @keyframes spin {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="main-circle">
+        <div class="angle"></div>
+        <div class="second-circle">
+            <p>RWAD</p>
+        </div>
+    </div>
+</body>
+</html>
